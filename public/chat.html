@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class="container">
+
+    <div class="row mt-5">
+
+        <div class="col-sm-6">
+            <h3>Enviar mensaje</h3>
+            <hr>
+            <input type="text" id="txtUid" class="form-control mb-2" placeholder="uid" autocomplete="off">
+
+            <input type="text" id="txtMessage" class="form-control mb-2" placeholder="Mensaje" autocomplete="off">
+
+            <h3>Usuarios</h3>
+            <hr>
+            <ul id="ulUsuarios">
+
+            </ul>
+        </div>
+
+
+        <div class="col-sm-6">
+            <h3>Chat completo</h3>
+            <hr>
+            <ul id="ulMensajes">
+
+            </ul>
+
+
+        </div>
+
+
+    </div>
+
+
+    <button id="btnSalir" class="btn btn-outline-danger">
+        Logout
+    </button>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./js/chat.js"></script>
+</body>
+
+</html>

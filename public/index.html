@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Signin</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-sm-6">
+
+                <h1>Google Signin</h1>
+
+                <hr>
+
+                <div id="g_id_onload"
+                    data-client_id="844641902923-c0khm0aj61d5b5v6dgnconjdke76u3np.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse" data-auto_prompt="false" data-auto_select="true">
+                </div>
+
+                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline"
+                    data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left">
+                </div>
+
+
+                <button class="mt-5" id="g_id_signout">Sign Out</button>
+            </div>
+
+            <div class="col-sm-6">
+                <h1>login manual</h1>
+                <hr>
+
+                <form class="d-grid">
+                    <input type="text" name="email" placeholder="email" class="form-control mb-2" />
+                    <input type="password" name="password" placeholder="password" class="form-control mb-2" />
+                    <br>
+                    <button type="submit" class="btn btn-primary">
+                        ingresar
+                    </button>
+                </form>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="./js/auth.js"></script>
+</body>
+
+</html>
