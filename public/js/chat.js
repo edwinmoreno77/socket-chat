@@ -127,28 +127,22 @@ txtMessage.addEventListener('keyup', ({ keyCode }) => {
     txtMessage.value = '';
 });
 
-// btnSalir.addEventListener('click', () => {
+btnSalir.addEventListener('click', () => {
 
-//     localStorage.removeItem('token');
+    // localStorage.removeItem('token');
 
-//     const auth2 = gapi.auth2.getAuthInstance();
-//     auth2.signOut().then(() => {
-//         console.log('User signed out.');
-//         window.location = 'index.html';
-//     });
-// });
+    //google
+    google.accounts.id.disableAutoSelect()
+    localStorage.clear()
+    //google
+
+    window.location = 'index.html';
+});
 
 const main = async () => {
 
     await validarJWT();
 
 }
-
-// (() => {
-//     gapi.load('auth2', () => {
-//         gapi.auth2.init();
-//         main();
-//     });
-// })();
 
 main();
