@@ -11,6 +11,7 @@ const txtUid = document.querySelector('#txtUid');
 const txtMessage = document.querySelector('#txtMessage');
 const ulUsuarios = document.querySelector('#ulUsuarios');
 const ulMensajes = document.querySelector('#ulMensajes');
+const ulPrivateMessages = document.querySelector('#ulPrivateMessages');
 const btnSalir = document.querySelector('#btnSalir');
 
 //validate localstorage token
@@ -62,6 +63,7 @@ const connectSocket = async () => {
 
     socket.on('private-message', (payload) => {
         console.log('Privado:', payload);
+        drawPrivateMessages(payload);
     });
 }
 
@@ -95,6 +97,22 @@ const drawMessages = (messages = []) => {
     });
 
     ulMensajes.innerHTML = messagesHtml;
+}
+
+const drawPrivateMessages = (messages = []) => {
+    let messagesHtml = '';
+    const { from, message } = messages;
+    messagesHtml += `
+            <li>
+                <p>
+                    <span class="text-primary">${from}:</span>
+                    <span>${message}</span>
+                </p>
+            </li>
+        `;
+
+
+    ulPrivateMessages.innerHTML = messagesHtml;
 }
 
 txtMessage.addEventListener('keyup', ({ keyCode }) => {
